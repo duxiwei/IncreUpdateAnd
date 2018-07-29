@@ -44,15 +44,9 @@ public class MainActivity extends AppCompatActivity {
     private void doBspatch() {
         final File destApk = new File(Environment.getExternalStorageDirectory(), "dest.apk");
         final File patch = new File(Environment.getExternalStorageDirectory(), "PATCH.patch");
-
-        Log.e("hongyang", "patch = " + patch.exists() + " , " + patch.getAbsolutePath());
-
         ApkUpdate.update(ApkUpdate.extract(this),
                 destApk.getAbsolutePath(),
                 patch.getAbsolutePath());
-
-        Log.e("hongyang", new File(Environment.getExternalStorageDirectory(), "old").getAbsolutePath() + " , " + destApk.exists());
-
         if (destApk.exists())
             ApkUpdate.install(this, destApk.getAbsolutePath());
     }
