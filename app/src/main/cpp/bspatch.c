@@ -7,7 +7,7 @@
 #include "bzip2/bzlib.h"
 
 
-JNIEXPORT jint JNICALL Java_com_duxiwei_ApkUpdte_update
+JNIEXPORT jint JNICALL Java_com_duxiwei_util_ApkUpdate_update
         (JNIEnv *env, jclass cls,
          jstring old, jstring new, jstring patch){
     int argc = 4;
